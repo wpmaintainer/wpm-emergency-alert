@@ -1,0 +1,31 @@
+.wpm-ea-alert { font-size: 16px; max-width: calc( 100% - 40px ); box-shadow: 3px 3px 4px rgba(0,0,0,.5); }
+.wpm-ea-alert .wpm-ea-alert-pad { padding: 2em; }
+.wpm-ea-alert .wpm-ea-alert-bin { max-width: 100%; width: 700px; margin: 0 auto; }
+.wpm-ea-alert .wpm-ea-alert-bin p { margin: 0 0 1em; padding: 0; }
+.wpm-ea-alert .aligncenter { text-align: center; }
+
+.wpm-ea-button { display: inline-block; border: 2px solid; color: #000; padding: .25em .5em; border-radius: 3px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+
+/* Top */
+.wpm-ea-alert-top { position: fixed; top: 20px; left: 20px; width: calc( 100% - 40px ); z-index: 9999; }
+.admin-bar .wpm-ea-alert-top { top: 42px; }
+.wpm-ea-alert-top-absolute { position: absolute; top: 0; left: 0; width: 100%; max-width: 100%; box-shadow: none; }
+body.wpm-ea-position-top-absolute { margin-top: 100px; z-index: 9999; }
+
+/* Bottom */
+.wpm-ea-alert-bottom { position: fixed; bottom: 20px; left: 20px; width: calc( 100% - 40px ); z-index: 9999; }
+.wpm-ea-alert-bottom-absolute { position: absolute; bottom: 0; left: 0; width: 100%; max-width: 100%; box-shadow: none; }
+body.wpm-ea-position-bottom-absolute { padding-bottom: 100px; position: relative; z-index: 9999; }
+
+/* Lightbox */
+.wpm-ea-alert-overlay { position: fixed; top: 0; left: 0; height: 100%; width: 100%; z-index: 9990; background: rgba(0,0,0,.75); }
+.wpm-ea-alert-lightbox { position: absolute; top: 25%; left: calc( 50% - 325px ); max-width: 100%; width: 650px; z-index: 9999; margin: 0 auto; }
+.wpm-ea-alert-lightbox .wpm-ea-trigger-taskbar { position: absolute; top: 5px; right: 5px; font-size: 10px; padding: .5em .6em; line-height: 1.0; }
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+    .wpm-ea-alert-bottom,
+    .wpm-ea-alert-top,
+    .wpm-ea-alert-lightbox { width: calc( 100% - 60px ); left: 30px; }
+    .wpm-ea-alert-lightbox { top: 10%; }
+}
