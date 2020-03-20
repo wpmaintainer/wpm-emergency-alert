@@ -224,6 +224,8 @@ class Emergency_Alert {
         if ( !$color )
             $color = self::DEFAULT_COLOR;
 
+        $js_adjust = \get_option( 'wpm_ea_js_adjust' );
+        
         $content = \get_option( 'wpm_ea_content' );
 
         include __DIR__ . '/views/admin-settings.php';
