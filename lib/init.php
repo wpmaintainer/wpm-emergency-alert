@@ -135,7 +135,7 @@ class Emergency_Alert {
 
     public function wp_footer()
     {
-        if ( 'on' != \get_option( 'wpm_ea_status' ) ) return;
+        if ( 'on' != \apply_filters( 'wpm_ea_status', \get_option( 'wpm_ea_status' ) ) ) return;
 
         $color = \get_option( 'wpm_ea_color' );
         $bgcolor = \get_option( 'wpm_ea_bgcolor' );
