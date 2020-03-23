@@ -177,6 +177,15 @@ class Emergency_Alert {
 
     public function body_class( $classes )
     {
+        if ( 'true' == $suppress )
+        {
+            $alerts = self::get_suppressed_alerts();
+            if ( \in_array( self::get_current_hash(), $alerts ) )
+            {
+                return;
+            }
+        }
+        
         if ( 'on' == \get_option( 'wpm_ea_status' ) )
         {
             $classes[] = 'wpm-ea-active';
