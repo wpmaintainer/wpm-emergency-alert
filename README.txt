@@ -1,10 +1,10 @@
 === Emergency Alerts ===
 Contributors: wpmaintainer, theandystratton
 Donate link: https://wpmaintainer.com
-Tags: alert, lightbox, messages, emergency, covid-19, covid19, coronavirus, closing, shutdown
+Tags: alert, lightbox, messages, emergency, covid-19, covid19, coronavirus, closing, shutdown, banner
 Requires at least: 4.6
 Tested up to: 5.3
-Stable tag: 5.3
+Stable tag: 1.1.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -51,6 +51,9 @@ Top/Bottom Alert Positions will be more tricky with more complex header/footer a
 Yes, our default output is responsive but every site is different. You may require some custom CSS to make things look 100% perfect!
 
 == Changelog ==
+
+= 1.1.0 =
+* Updates for repository imagery and a filename typo. Adds setting link shortcut.
 
 = 1.0 =
 * First version of the plugin - released.

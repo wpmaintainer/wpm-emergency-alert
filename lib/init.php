@@ -44,10 +44,17 @@ class Emergency_Alert {
         // admin
         \add_action( 'admin_init', [ $this, 'admin_init' ] );
         \add_action( 'admin_menu', [ $this, 'admin_menu' ] );
+        \add_filter( 'plugin_action_links_' . WPM_EA_BASENAME, [ $this, 'plugin_action_links' ] );
 
         // ajax
         \add_action( 'wp_ajax_wpm-ea-suppress', [ $this, 'ajax_suppress_alert' ] );
         \add_action( 'wp_ajax_nopriv_wpm-ea-suppress', [ $this, 'ajax_suppress_alert' ] );
+    }
+
+    public function plugin_action_links( $links )
+    {
+        $links[] = '<a href="' . \admin_url( 'options-general.php?page=wpm-ea-settings' ) . '">Plugin Settings</a>';
+        return $links;
     }
 
     public function ajax_suppress_alert()
