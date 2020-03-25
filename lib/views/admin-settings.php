@@ -118,6 +118,17 @@
             ?>
         </p>
         <p>
+            <label for="ea-cookie-expires">
+                <strong>How many days should a suppressed alert stay suppressed?</strong>
+            </label>
+            <br>
+            <input type="number" id="ea-cookie-expires" name="ea[cookie_expires]" value="<?php echo (int) $cookie_expires; ?>" step="1" min="0">
+            <small>
+                <br>Default is 0 (alert will show if the user closeses their browser session and returns to the site).
+                <strong>Note:</strong> Updating this will only affect NEW visitors. Use the checkbox below to reset the settings and show the alert again to all users.
+            </small>
+        </p>
+        <p>
             <label for="ea-reset-cookies">
                 <input type="checkbox" id="ea-reset-cookies" name="ea[reset_cookies]" value="<?php echo \esc_attr( \date_i18n( 'U' ) ); ?>">
                 Force the alert to appear for all users (resets for all users who have dismissed the alert).

@@ -73,7 +73,10 @@ class Emergency_Alert {
         $alerts = \json_encode( $alerts );
 
         // currently only browser session supported
-        $result = \setcookie( 'wpm-ea-suppressions', $alerts, 0, COOKIEPATH, COOKIE_DOMAIN, \is_ssl(), false );
+        $time = (int) \get_option( 'wpm_ea_cookie_expires' );
+        if ( $time ) 
+            $time = \date_i18n( 'U' ) + ( $time * 24 * 3600 );
+        $result = \setcookie( 'wpm-ea-suppressions', $alerts, $time, COOKIEPATH, COOKIE_DOMAIN, \is_ssl(), false );
         $_COOKIE['wpm-ea-suppressions'] = $alerts;
 
         echo \json_encode( $_COOKIE );
@@ -84,6 +87,7 @@ class Emergency_Alert {
     {
         $alerts = \stripslashes( $_COOKIE['wpm-ea-suppressions'] ) ?? '[]';
         $alerts = \json_decode( $alerts );
+        if ( !\is_array( $alerts ) ) return [];
         return $alerts;
     }
 
@@ -115,6 +119,7 @@ class Emergency_Alert {
                     case 'persist' :
                     case 'position' :
                     case 'status' :
+                    case 'cookie_expires' :
                         \update_option( 'wpm_ea_' . $k, $v );
                         break;
                 }
@@ -228,6 +233,10 @@ class Emergency_Alert {
         $persist = \get_option( 'wpm_ea_persist' );
         if ( !$persist )
             $persist = 'on';
+
+        $cookie_expires = \get_option( 'wpm_ea_cookie_expires' );
+        if ( !$cookie_expires )
+            $cookie_expires = 0;
 
         $position = \get_option( 'wpm_ea_position' );
         if ( !$position )
