@@ -199,7 +199,7 @@ class Emergency_Alert {
             }
         }
 
-        if ( 'on' == \get_option( 'wpm_ea_status' ) )
+        if ( 'on' == \apply_filters( 'wpm_ea_status', \get_option( 'wpm_ea_status' ) ) )
         {
             $classes[] = 'wpm-ea-active';
 
@@ -228,7 +228,7 @@ class Emergency_Alert {
     public function admin_settings()
     {
 
-        $status = \get_option( 'wpm_ea_status' );
+        $status = \apply_filters( 'wpm_ea_status', \get_option( 'wpm_ea_status' ) );
         
         $persist = \get_option( 'wpm_ea_persist' );
         if ( !$persist )
