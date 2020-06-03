@@ -195,7 +195,7 @@ class Emergency_Alert {
             $alerts = self::get_suppressed_alerts();
             if ( \in_array( self::get_current_hash(), $alerts ) )
             {
-                return;
+                return $classes;
             }
         }
 
