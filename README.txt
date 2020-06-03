@@ -3,8 +3,8 @@ Contributors: wpmaintainer, theandystratton
 Donate link: https://wpmaintainer.com
 Tags: alert, lightbox, messages, emergency, covid-19, covid19, coronavirus, closing, shutdown, banner
 Requires at least: 4.6
-Tested up to: 5.3
-Stable tag: 1.3.0
+Tested up to: 5.4
+Stable tag: 1.4.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -51,6 +51,9 @@ Top/Bottom Alert Positions will be more tricky with more complex header/footer a
 Yes, our default output is responsive but every site is different. You may require some custom CSS to make things look 100% perfect!
 
 == Changelog ==
+
+= 1.4.0 =
+* Corrects a bug where dismissing the alert wipes out default values from `body_class()`
 
 = 1.3.0 =
 * Corrects a bug with the `wpm_ea_status` filter.
