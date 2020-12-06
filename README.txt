@@ -3,7 +3,7 @@ Contributors: wpmaintainer, theandystratton
 Donate link: https://wpmaintainer.com
 Tags: alert, lightbox, messages, emergency, covid-19, covid19, coronavirus, closing, shutdown, banner
 Requires at least: 4.6
-Tested up to: 5.4
+Tested up to: 5.6
 Stable tag: 1.4.0
 Requires PHP: 7.0
 License: GPLv2 or later
